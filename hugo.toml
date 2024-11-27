@@ -1,8 +1,6 @@
 baseURL = "https://figadozen.catiteo.com"
 
 disableKinds = ["section", "taxonomy", "term"]
-
-theme = "hugo_figadozen"
 relativeURLs = true
 canonifyURLs = true
 
