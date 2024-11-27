@@ -1,8 +1,6 @@
-baseURL = "https://figadozen.catiteo.com"
+baseURL = "https://hugo.joaovitor.art"
 
 disableKinds = ["section", "taxonomy", "term"]
-relativeURLs = true
-canonifyURLs = true
 
 [module]
   [module.hugoVersion]
@@ -17,7 +15,6 @@ canonifyURLs = true
 
 [minify]
   minifyOutput = true
-  disableXML = true
   [minify.tdewolff]
     [minify.tdewolff.html]
       keepWhitespace = false
@@ -28,7 +25,6 @@ canonifyURLs = true
 
 [build]
   writeStats = true
-  useResourceCacheWhen = "always"
   [[build.cachebusters]]
     source = "assets/watching/hugo_stats\\.json"
     target = "styles\\.css"
@@ -51,7 +47,3 @@ canonifyURLs = true
   [security.http]
     methods = ['GET']
     urls = ['https://img.youtube.com/.+']
-
-# Configurações de Saída
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
