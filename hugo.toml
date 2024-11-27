@@ -1,0 +1,49 @@
+baseURL = "https://figadozen.catiteo.com"
+
+disableKinds = ["section", "taxonomy", "term"]
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min      = "0.112.0"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "hugo_stats.json"
+    target = "assets/watching/hugo_stats.json"
+
+[minify]
+  minifyOutput = true
+  [minify.tdewolff]
+    [minify.tdewolff.html]
+      keepWhitespace = false
+    [minify.tdewolff.css]
+      keepCSS2 = true
+    [minify.tdewolff.js]
+      keepVarNames = false
+
+[build]
+  writeStats = true
+  [[build.cachebusters]]
+    source = "assets/watching/hugo_stats\\.json"
+    target = "styles\\.css"
+  [[build.cachebusters]]
+    source = "(postcss|tailwind)\\.config\\.js"
+    target = "css"
+  [[build.cachebusters]]
+    source = "assets/.*\\.(js|ts|jsx|tsx)"
+    target = "js"
+  [[build.cachebusters]]
+    source = "assets/.*\\.(.*)$"
+    target = "$1"
+
+[imaging]
+  quality = 75
+  resampleFilter = "Lanczos"
+
+[security]
+  enableInlineShortcodes = false
+  [security.http]
+    methods = ['GET']
+    urls = ['https://img.youtube.com/.+']
