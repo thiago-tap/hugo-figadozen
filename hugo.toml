@@ -3,6 +3,8 @@ baseURL = "https://figadozen.catiteo.com"
 disableKinds = ["section", "taxonomy", "term"]
 
 theme = "hugo_figadozen"
+relativeURLs = true
+canonifyURLs = true
 
 [module]
   [module.hugoVersion]
@@ -17,6 +19,7 @@ theme = "hugo_figadozen"
 
 [minify]
   minifyOutput = true
+  disableXML = true
   [minify.tdewolff]
     [minify.tdewolff.html]
       keepWhitespace = false
@@ -27,6 +30,7 @@ theme = "hugo_figadozen"
 
 [build]
   writeStats = true
+  useResourceCacheWhen = "always"
   [[build.cachebusters]]
     source = "assets/watching/hugo_stats\\.json"
     target = "styles\\.css"
@@ -49,3 +53,7 @@ theme = "hugo_figadozen"
   [security.http]
     methods = ['GET']
     urls = ['https://img.youtube.com/.+']
+
+# Configurações de Saída
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
