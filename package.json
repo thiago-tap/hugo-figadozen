@@ -5,7 +5,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "build": "postcss input.css -o output.css",
+    "build": "hugo -b $CF_PAGES_URL",
     "start": "hugo server",
     "serve": "hugo server --watch"
   },
