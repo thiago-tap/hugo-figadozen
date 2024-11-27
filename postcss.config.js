@@ -8,5 +8,6 @@ module.exports = {
   plugins: [
     tailwind,
     ...(process.env.HUGO_ENVIRONMENT === "production" ? [autoprefixer] : []),
+    autoprefixer,
   ],
 };
