@@ -2,7 +2,7 @@
 <div class="min-h-screen bg-white">
     <!-- SVG Curva Azul pra baixo-->
     <div>
-        <svg viewBox="0 0 800 50" preserveAspectRatio="none" width="100%" height="90">
+        <svg viewBox="0 0 800 50" preserveAspectRatio="none" width="100%" height="90" aria-hidden="true">
             <g>
                 <path fill="#00a0b2"
                     d="M0,0 L800,0 L800,50 C666.666667,22.5877193 533.333333,8.88157895 400,8.88157895 C266.666667,8.88157895 133.333333,22.5877193 0,50 L0,0 Z">
@@ -39,8 +39,9 @@
                                          {{ $image1024.RelPermalink }} 1024w" sizes="(max-width: 300px) 300px,
                                         (max-width: 640px) 640px,
                                         (max-width: 768px) 768px,
-                                        1024px" alt="FígadoZen" width="{{ $image1024.Width }}"
-                        height="{{ $image1024.Height }}" loading="eager" decoding="async" class="w-auto h-auto">
+                                        1024px" alt="FígadoZen - Suplemento Natural para Gordura no Fígado"
+                        width="{{ $image1024.Width }}" height="{{ $image1024.Height }}" loading="eager" decoding="async"
+                        class="w-auto h-auto">
                     {{ end }}
                 </div>
 
@@ -48,7 +49,7 @@
                 <a href="#formsPreco"
                     class="px-10 py-5 items-center justify-center font-bold text-white uppercase transition-colors bg-gradient-to-b from-green-gradienteDe to-green-gradientePara rounded-lg font-system hover:from-green-hover hover:to-green-hover">
                     <span class="hidden sm:inline text-3xl">VER PREÇO E OFERTAS</span>
-                    <span class="flex inline sm:hidden text-2xl items-center justify-center text-center">VER PREÇO
+                    <span class="inline-flex sm:hidden text-2xl items-center justify-center text-center">VER PREÇO
                         E<br />OFERTAS</span>
                 </a>
             </div>
@@ -95,8 +96,8 @@
                 {{ $hero := .Resources.GetMatch .Params.img_protegido_1 }}
                 {{ with $hero }}
                 {{ $image300 := .Resize "300x225 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-                <img src="{{ $image300.RelPermalink }}" alt="FígadoZen" width="300" height="225" loading="eager"
-                    decoding="async" class="w-80">
+                <img src="{{ $image300.RelPermalink }}" alt="Estágio 1: Acúmulo de gordura nas células do fígado"
+                    width="300" height="225" loading="eager" decoding="async" class="w-80">
                 {{ end }}
                 <div class="md:w-3/4 transition-all duration-500">
                     <h3 class="text-xl font-bold text-gray-800 mb-2 font-open-sans transition-all duration-500">
@@ -114,8 +115,8 @@
                 {{ $hero := .Resources.GetMatch .Params.img_protegido_2 }}
                 {{ with $hero }}
                 {{ $image300 := .Resize "300x225 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-                <img src="{{ $image300.RelPermalink }}" alt="FígadoZen" width="300" height="225" loading="eager"
-                    decoding="async" class="w-80">
+                <img src="{{ $image300.RelPermalink }}" alt="Estágio 2: Resposta Inflamatória" width="300" height="225"
+                    loading="eager" decoding="async" class="w-80">
                 {{ end }}
                 <div class="md:w-5/6 transition-all duration-500">
                     <h3 class="text-xl font-bold text-gray-800 mb-2 font-open-sans transition-all duration-500">
@@ -123,7 +124,7 @@
                     </h3>
                     <p class="text-base md:text-lg mt-6 font-sans transition-all duration-500">
                         Esse acúmulo de gordura nas células do fígado causa uma
-                        resposta inflamatória auto – imune , na qual anticorpos
+                        resposta inflamatória auto-imune, na qual anticorpos
                         são enviados para atacar o próprio órgão.
                     </p>
                 </div>
@@ -134,8 +135,8 @@
                 {{ $hero := .Resources.GetMatch .Params.img_protegido_3 }}
                 {{ with $hero }}
                 {{ $image300 := .Resize "300x225 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-                <img src="{{ $image300.RelPermalink }}" alt="FígadoZen" width="300" height="225" loading="eager"
-                    decoding="async" class="w-80">
+                <img src="{{ $image300.RelPermalink }}" alt="Estágio 3: Função Hepática Reduzida" width="300"
+                    height="225" loading="eager" decoding="async" class="w-80">
                 {{ end }}
                 <div class="md:w-3/4 transition-all duration-500">
                     <h3 class="text-xl font-bold text-gray-800 mb-2 font-open-sans transition-all duration-500">
@@ -143,7 +144,7 @@
                     </h3>
                     <p class="text-base md:text-lg mt-6 font-sans transition-all duration-500">
                         A inflamação reduz a capacidade do fígado de funcionar
-                        adequadamente , impactando negativamente sua capacidade
+                        adequadamente, impactando negativamente sua capacidade
                         de desintoxicar o corpo e processar impurezas, causando
                         maior acúmulo de gordura no fígado.
                     </p>
@@ -157,7 +158,7 @@
             </h1>
             <p class="text-lg md:text-lg font-normal text-slate-700">
                 Se <span class="font-bold text-blue-site">nada for feito</span>, um fígado gordo pode levar à cirrose
-                hepática, condição grave e que requer grandes mudanças no estilo de vida.
+                hepática, condição grave que requer grandes mudanças no estilo de vida.
             </p>
         </div>
 
@@ -288,7 +289,7 @@
     <div class="max-w-5xl px-4 pb-8 mx-auto">
         <div class="max-w-5xl pt-4 mx-auto mb-12 text-center">
             <h1 class="my-4 text-xl md:text-[40px] font-extrabold text-green-site leading-tight">
-                A CAUSA BIOLOGICA DE UM FÍGADO GORDO
+                A Causa Biológica de um Fígado Gordo
             </h1>
             <p class="text-lg md:text-lg font-normal text-slate-700">
                 Os pesquisadores identificaram a "mãe de todos os antioxidantes", que <span
@@ -301,21 +302,20 @@
                 {{ $hero := .Resources.GetMatch .Params.celula }}
                 {{ with $hero }}
                 {{ $image500 := .Resize "500x366 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-                <img src="{{ $image500.RelPermalink }}" alt="FígadoZen" width="500" height="366" loading="eager"
-                    decoding="async" class="w-full">
+                <img src="{{ $image500.RelPermalink }}" alt="Imagem de célula do fígado saudável" width="500"
+                    height="366" loading="eager" decoding="async" class="w-full">
                 {{ end }}
             </div>
 
             <div class="text-base md:text-base font-normal text-left md:w-full hidden sm:block">
                 <p class="text-gray-600">
-                    O fígado é responsável por uma infinidade de funções, sendo que a mais importante delas é a
-                    decomposição de toxinas que
-                    podem causar inflamação e danos às células do corpo.
+                    O fígado é responsável por uma infinidade de funções, sendo a mais importante delas a
+                    decomposição de toxinas que podem causar inflamação e danos às células do corpo.
                 </p>
-                <p class="text-gray-600">Com a gordura se acumulando continuamente nas células do fígado, seu fígado
-                    luta para regular o andamento da inflamação e é incapaz de produzir o que os cientistas chamam de “a
+                <p class="text-gray-600">Com a gordura se acumulando continuamente nas células do fígado, ele
+                    luta para regular a inflamação e é incapaz de produzir o que os cientistas chamam de “a
                     mãe de todos os antioxidantes” - a glutationa.</p>
-                <p class="text-gray-600">Este antioxidante é o protagonista no controle da inflamação provocada pelos
+                <p class="text-gray-600">Este antioxidante é crucial no controle da inflamação provocada pelos
                     danos dos radicais livres. Assim, a glutationa cria o ambiente ideal para <span
                         class="text-blue-site font-bold">o funcionamento saudável do fígado</span>.
                 </p>
@@ -324,9 +324,10 @@
 
         <div class="flex flex-col items-center justify-center gap-8 mt-14">
             <a href="#formsPreco"
-                class="px-10 py-5 lg:text-2xl sd:text-2xl md:text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-green-gradienteDe to-green-gradientePara rounded-lg font-system hover:from-green-hover hover:to-green-hover">
+                class="px-10 py-5 lg:text-2xl sd:text-2xl md:text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-green-gradienteDe to-green-gradientePara rounded-lg font-system hover:from-green-hover hover:to-green-hover"
+                aria-label="Ver Preço e Ofertas">
                 <span class="hidden sm:inline text-3xl">VER PREÇO E OFERTAS</span>
-                <span class="flex inline sm:hidden text-2xl items-center justify-center text-center">VER PREÇO
+                <span class="inline-flex sm:hidden text-2xl items-center justify-center text-center">VER PREÇO
                     E<br />OFERTAS</span>
             </a>
         </div>
@@ -365,7 +366,7 @@
             <p class="text-lg md:text-lg font-normal text-slate-700">
                 <span class="text-blue-site font-bold">FÍGADO</span><span class="text-green-site font-bold">ZEN</span> é
                 uma associação de
-                ervas medicinais que trazem diversos benefícios a saúde
+                ervas medicinais que trazem diversos benefícios à saúde.
             </p>
         </div>
     </div>
@@ -375,8 +376,8 @@
             {{ $hero := .Resources.GetMatch .Params.natural_100 }}
             {{ with $hero }}
             {{ $image500 := .Resize "433x549 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-            <img src="{{ $image500.RelPermalink }}" alt="FígadoZen" width="433" height="549" loading="eager"
-                decoding="async" class="w-full">
+            <img src="{{ $image500.RelPermalink }}" alt="FígadoZen - 100% Natural" width="433" height="549"
+                loading="eager" decoding="async" class="w-full">
             {{ end }}
         </div>
 
@@ -395,8 +396,8 @@
                 da Doença hepática gordurosa que são:
             </p>
             <ul class="list-disc text-gray-600 ml-12 my-3 p-4 sm:p-0">
-                <li>Doença hepática gordurosa alcoólica (DHGA),</li>
-                <li>Doença hepática gordurosa não alcoólica (DHGNA).</li>
+                <li>Doença hepática gordurosa alcoólica (DHGA)</li>
+                <li>Doença hepática gordurosa não alcoólica (DHGNA)</li>
             </ul>
             <p class="text-gray-600 mt-3 p-4 sm:p-0">
                 <span class="font-bold">GRAUS DE GORDURA NO FÍGADO QUE O
@@ -405,13 +406,12 @@
             </p>
             <ul class="list-disc text-gray-600 ml-12 my-3 p-4 sm:p-0">
                 <li>
-                    <span class="font-bold">Grau 1</span>, em que há um leve acúmulo de
-                    gordura no fígado, o que, de forma geral, corresponde ao acometimento de
-                    cerca de 30% das células do fígado;
+                    <span class="font-bold">Grau 1</span>: leve acúmulo de gordura no fígado, acometendo cerca de 30%
+                    das células do fígado.
                 </li>
                 <li class="mt-3">
-                    <span class="font-bold">Grau 2</span>, em que há acúmulo moderado de
-                    gordura, de forma que até 60% das células do fígado estão afetadas.
+                    <span class="font-bold">Grau 2</span>: acúmulo moderado de gordura, afetando até 60% das células do
+                    fígado.
                 </li>
             </ul>
         </div>
@@ -420,11 +420,11 @@
 
     <div class="max-w-5xl px-4 pb-8 mt-10 mx-auto">
         <div class="max-w-5xl pt-4 mx-auto mb-8 text-center">
-            <h1 class="my-4 text-xl md:text-[40px] font-extrabold text-green-site leading-tight">
-                CONHEÇA NOSSAS INSTALAÇÕES
-            </h1>
+            <h2 class="my-4 text-xl md:text-[40px] font-extrabold text-green-site leading-tight">
+                Conheça Nossas Instalações
+            </h2>
             <p class="text-lg md:text-lg font-normal text-slate-700">
-                <span class="text-blue-site font-bold">FÍGADO</span><span class="text-green-site font-bold">ZEN</span> é
+                <span class="text-blue-site font-bold">Fígado</span><span class="text-green-site font-bold">Zen</span> é
                 produzido com todo cuidado e carinho!
             </p>
         </div>
@@ -458,6 +458,10 @@
             <h1 class="my-4 text-xl md:text-[40px] font-extrabold text-green-site leading-tight">
                 OS PRINCIPAIS INGREDIENTES DO <span class="text-blue-site font-bold">FÍGADO</span>ZEN
             </h1>
+            <p class="text-lg md:text-lg font-normal text-slate-700">
+                Descubra os ingredientes naturais que fazem do <span class="text-blue-site font-bold">FÍGADO</span><span
+                    class="text-green-site font-bold">ZEN</span> um suplemento eficaz para a saúde do fígado.
+            </p>
         </div>
     </div>
 
@@ -468,14 +472,14 @@
                 {{ $hero := .Resources.GetMatch .Params.curcuma }}
                 {{ with $hero }}
                 {{ $image300 := .Resize "150x150 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-                <img src="{{ $image300.RelPermalink }}" alt="FígadoZen" width="150" height="150" loading="eager"
-                    decoding="async" class="w-full">
+                <img src="{{ $image300.RelPermalink }}" alt="Cúrcuma - FígadoZen" width="150" height="150"
+                    loading="eager" decoding="async" class="w-full">
                 {{ end }}
             </div>
-            <h3 class="text-xl text-slate-700 font-bold mt-4">CÚRCUMA</h3>
+            <h3 class="text-xl text-slate-700 font-bold mt-4">Cúrcuma</h3>
             <p class="text-lg text-slate-700 mt-2">
                 Ajuda na desintoxicação do órgão, potencializando sua capacidade
-                enzimática de limpar o organismo e evitando problemas no fígado​.
+                enzimática de limpar o organismo e evitando problemas no fígado.
             </p>
         </div>
 
@@ -485,11 +489,11 @@
                 {{ $hero := .Resources.GetMatch .Params.vitamina_c }}
                 {{ with $hero }}
                 {{ $image300 := .Resize "150x150 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-                <img src="{{ $image300.RelPermalink }}" alt="FígadoZen" width="150" height="150" loading="eager"
-                    decoding="async" class="w-full">
+                <img src="{{ $image300.RelPermalink }}" alt="Vitamina C - FígadoZen" width="150" height="150"
+                    loading="eager" decoding="async" class="w-full">
                 {{ end }}
             </div>
-            <h3 class="text-xl text-slate-700 font-bold mt-4">VITAMINA C</h3>
+            <h3 class="text-xl text-slate-700 font-bold mt-4">Vitamina C</h3>
             <p class="text-lg text-slate-700 mt-2">
                 Tem importante papel no metabolismo e transporte de lipídios,
                 atenuando a esteatose hepática.
@@ -502,11 +506,11 @@
                 {{ $hero := .Resources.GetMatch .Params.vitamina_e }}
                 {{ with $hero }}
                 {{ $image300 := .Resize "150x150 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-                <img src="{{ $image300.RelPermalink }}" alt="FígadoZen" width="150" height="150" loading="eager"
-                    decoding="async" class="w-full">
+                <img src="{{ $image300.RelPermalink }}" alt="Vitamina E - FígadoZen" width="150" height="150"
+                    loading="eager" decoding="async" class="w-full">
                 {{ end }}
             </div>
-            <h3 class="text-xl text-slate-700 font-bold mt-4">VITAMINA E</h3>
+            <h3 class="text-xl text-slate-700 font-bold mt-4">Vitamina E</h3>
             <p class="text-lg text-slate-700 mt-2">
                 É um excelente antioxidante, aumenta as defesas do organismo e
                 diminui a inflamação no fígado.
@@ -521,14 +525,13 @@
                 {{ $hero := .Resources.GetMatch .Params.magnesio }}
                 {{ with $hero }}
                 {{ $image300 := .Resize "150x150 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-                <img src="{{ $image300.RelPermalink }}" alt="FígadoZen" width="150" height="150" loading="eager"
-                    decoding="async" class="w-full">
+                <img src="{{ $image300.RelPermalink }}" alt="Magnésio - FígadoZen" width="150" height="150"
+                    loading="eager" decoding="async" class="w-full">
                 {{ end }}
             </div>
-            <h3 class="text-xl text-slate-700 font-bold mt-4">MAGNÉSIO</h3>
+            <h3 class="text-xl text-slate-700 font-bold mt-4">Magnésio</h3>
             <p class="text-lg text-slate-700 mt-2">
-                É essencial para melhorar a função hepática e contribui para a
-                recuperação do fígado.
+                Essencial para melhorar a função hepática e contribui para a recuperação do fígado.
             </p>
         </div>
 
@@ -538,14 +541,13 @@
                 {{ $hero := .Resources.GetMatch .Params.metionina }}
                 {{ with $hero }}
                 {{ $image300 := .Resize "150x150 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-                <img src="{{ $image300.RelPermalink }}" alt="FígadoZen" width="150" height="150" loading="eager"
-                    decoding="async" class="w-full">
+                <img src="{{ $image300.RelPermalink }}" alt="Metionina - FígadoZen" width="150" height="150"
+                    loading="eager" decoding="async" class="w-full">
                 {{ end }}
             </div>
-            <h3 class="text-xl text-slate-700 font-bold mt-4">METIONINA</h3>
+            <h3 class="text-xl text-slate-700 font-bold mt-4">Metionina</h3>
             <p class="text-lg text-slate-700 mt-2">
-                Intervém no metabolismo das gorduras, reduzindo a sua acumulação no
-                fígado e nas artérias.
+                Intervém no metabolismo das gorduras, reduzindo a sua acumulação no fígado e nas artérias.
             </p>
         </div>
 
@@ -555,24 +557,24 @@
                 {{ $hero := .Resources.GetMatch .Params.zinco }}
                 {{ with $hero }}
                 {{ $image300 := .Resize "150x150 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-                <img src="{{ $image300.RelPermalink }}" alt="FígadoZen" width="150" height="150" loading="eager"
+                <img src="{{ $image300.RelPermalink }}" alt="Zinco - FígadoZen" width="150" height="150" loading="eager"
                     decoding="async" class="w-full">
                 {{ end }}
             </div>
-            <h3 class="text-xl text-slate-700 font-bold mt-4">ZINCO</h3>
+            <h3 class="text-xl text-slate-700 font-bold mt-4">Zinco</h3>
             <p class="text-lg text-slate-700 mt-2">
-                Colabora no bom funcionamento do sistema imunológico, participa da
-                síntese e degradação dos carboidratos, lipídios e proteínas, e tem
-                função antioxidante.
+                Colabora no bom funcionamento do sistema imunológico, participa da síntese e degradação dos
+                carboidratos, lipídios e proteínas, e tem função antioxidante.
             </p>
         </div>
     </div>
 
     <div class="flex flex-col items-center justify-center gap-8 mt-14">
         <a href="#formsPreco"
-            class="px-10 py-5 lg:text-2xl sd:text-2xl md:text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-green-gradienteDe to-green-gradientePara rounded-lg font-system hover:from-green-hover hover:to-green-hover">
+            class="px-10 py-5 lg:text-2xl sd:text-2xl md:text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-green-gradienteDe to-green-gradientePara rounded-lg font-system hover:from-green-hover hover:to-green-hover"
+            aria-label="Ver Preço e Ofertas">
             <span class="hidden sm:inline text-3xl">VER PREÇO E OFERTAS</span>
-            <span class="flex inline sm:hidden text-2xl items-center justify-center text-center">VER PREÇO
+            <span class="inline-flex sm:hidden text-2xl items-center justify-center text-center">VER PREÇO
                 E<br />OFERTAS</span>
         </a>
     </div>
@@ -616,9 +618,10 @@
 
         <div class="flex flex-col items-center justify-center gap-8 mt-14">
             <a href="#formsPreco"
-                class="px-10 py-5 lg:text-2xl sd:text-2xl md:text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-blue-gradienteDe to-blue-gradientePara rounded-lg font-system hover:from-blue-hover hover:to-blue-hover">
+                class="px-10 py-5 lg:text-2xl sd:text-2xl md:text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-blue-gradienteDe to-blue-gradientePara rounded-lg font-system hover:from-blue-hover hover:to-blue-hover"
+                aria-label="Ver Preço e Ofertas">
                 <span class="hidden sm:inline text-3xl">VER PREÇO E OFERTAS</span>
-                <span class="flex inline sm:hidden text-2xl items-center justify-center text-center">VER PREÇO
+                <span class="inline-flex sm:hidden text-2xl items-center justify-center text-center">VER PREÇO
                     E<br />OFERTAS</span>
             </a>
         </div>
@@ -637,18 +640,19 @@
     </div>
 
     <div class="relative max-w-md mx-auto mb-16 bg-blue-site">
-        <form
-            action="https://webhook.sellflux.com/webhook/v2/form/lead/8853eb7bd2f10ea230ef86fe04a54c69?not_query=true&amp;redirect_url=https%3A%2F%2Ffigadozen.com.br%2Foferta-001%2F"
-            method="post" class="bg-white p-6 rounded-lg shadow-lg space-y-4">
+        <form action="#" method="post" class="bg-white p-6 rounded-lg shadow-lg space-y-4">
             <div>
+                <label for="name" class="sr-only">Nome</label>
                 <input type="text" id="name" name="name" placeholder="Nome *" required
                     class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-site" />
             </div>
             <div>
+                <label for="email" class="sr-only">Email</label>
                 <input type="email" id="email" name="email" placeholder="Email *" required
                     class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-site" />
             </div>
             <div>
+                <label for="phone" class="sr-only">Telefone</label>
                 <input type="text" id="phone" name="phone" placeholder="Telefone *" required
                     class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-site" />
             </div>
@@ -678,11 +682,12 @@
     </div>
     <!-- Conteúdo principal -->
     <div class="relative z-10 flex flex-col items-center justify-center text-center">
-        <img src="/images/saiba_como.webp" alt="Oferta Limitada" class="w-9/12 h-auto mt-14">
+        <img src="/images/saiba_como.webp" alt="Saiba como restaurar a saúde do seu fígado" class="w-9/12 h-auto mt-14">
     </div>
     <div class="flex flex-col items-center justify-center gap-8 mt-14">
         <a href="#formsPreco"
-            class="px-10 mb-10 py-5 lg:text-2xl sd:text-2xl md:text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-blue-gradienteDe to-blue-gradientePara rounded-lg font-system hover:from-blue-hover hover:to-blue-hover">
+            class="px-10 mb-10 py-5 lg:text-2xl sd:text-2xl md:text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-blue-gradienteDe to-blue-gradientePara rounded-lg font-system hover:from-blue-hover hover:to-blue-hover"
+            aria-label="Ver Preço e Ofertas">
             VER PREÇO E OFERTAS
         </a>
     </div>
@@ -700,6 +705,9 @@
     <h1 class="my-4 text-2xl md:text-[40px] font-extrabold text-green-site leading-tight">
         QUEM EXPERIMENTOU <span class="px-3 text-blue-site">FÍGADO</span>ZEN RECOMENDA
     </h1>
+    <p class="text-lg md:text-xl font-normal text-slate-700">
+        Veja os depoimentos de pessoas reais que experimentaram e aprovaram o FígadoZen.
+    </p>
 </div>
 
 <div class="grid max-w-4xl gap-6 mx-auto md:grid-cols-2">
@@ -728,7 +736,8 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto mt-8">
     {{ range .Params.escrita }}
     <div class="p-4 border border-gray-300 rounded-lg">
-        <img src="/{{ .img_id }}" alt="{{ .alt_text }}">
+        <img src="/{{ .img_id }}" alt="{{ .alt_text }}" loading="lazy" decoding="async" width="500" height="300"
+            class="w-full h-auto">
     </div>
     {{ end }}
 </div>
@@ -776,14 +785,15 @@
 </div>
 <div class="flex flex-col items-center justify-center mb-10">
     <a href="#formsPreco"
-        class="px-10 py-5 lg:text-2xl sd:text-2xl md:text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-green-gradienteDe to-green-gradientePara rounded-lg font-system hover:from-green-hover hover:to-green-hover">
+        class="px-10 py-5 lg:text-2xl sd:text-2xl md:text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-green-gradienteDe to-green-gradientePara rounded-lg font-system hover:from-green-hover hover:to-green-hover"
+        aria-label="Ver Preço e Ofertas">
         VER PREÇO E OFERTAS
     </a>
 </div>
 
 <!-- FAQ -->
 <div class="max-w-5xl mx-auto mb-16 mt-16">
-    <h2 class="mb-4 text-2xl font-bold text-center text-green-site md:mb-10 md:text-4xl">AINDA COM DÚVIDAS?</h2>
+    <h2 class="mb-4 text-2xl font-bold text-center text-green-site md:mb-10 md:text-4xl">Perguntas Frequentes</h2>
     <div class="p-4 space-y-6 md:p-0">
         {{ range .Params.faq }}
         <div>
