@@ -1,4 +1,4 @@
-baseURL = "https://hugo.joaovitor.art"
+baseURL = "https://figadozen.catiteo.com/"
 
 disableKinds = ["section", "taxonomy", "term"]
 

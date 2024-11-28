@@ -12,47 +12,47 @@
     </div>
 
     <!-- Hero Section -->
-    <div class="max-w-5xl px-4 pb-1 mx-auto">
+    <div class="max-w-5xl px-4 pb-1 mx-auto sm:mx-0 sm:px-0 justify-self-center">
 
-        <div class="max-w-5xl pt-4 mx-auto mb-12 text-center">
-            <h1 class="my-4 text-2xl md:text-[40px] font-extrabold text-green-site leading-tight">
-                RESTAURE A SAÚDE DO SEU FÍGADO COM APENAS
-                <span class="px-3 text-blue-site">25 GOTAS</span> POR DIA!
+        <div class="max-w-5xl text-center lg:pt-4 lg:mx-auto lg:mb-12 lg:mt-4 sm:mt-0 sm:pt-0 sm:mb-4 sm:mx-0">
+            <h1 class="lg:my-4 sm:my-0 text-2xl md:text-[40px] font-extrabold text-green-site leading-tight">
+                RESTAURE A SAÚDE DO SEU FÍGADO COM APENAS <span class="px-3 text-blue-site">25 GOTAS</span> POR DIA!
             </h1>
-            <p class="text-2xl md:text-xl font-normal text-slate-700">
+            <p class="text-2xl md:text-xl font-normal text-slate-700 hidden sm:block">
                 <span class="font-bold">FígadoZen</span> é um suplemento natural para gordura no fígado que conta com
                 ativos que auxiliam no tratamento da esteatose hepática.
-
             </p>
         </div>
 
-        <div class="mb-1">
+        <div class="mb-1 sm:mt-4 md:mt-4 lg:mt-4">
             <div class="flex flex-col items-center justify-center gap-8">
                 <div class="flex flex-col items-center justify-center gap-4 md:flex-row">
-                    <div class="w-full">
-                        {{ $hero := .Resources.GetMatch .Params.hero_image }}
-                        {{ with $hero }}
-                        {{ $image1024 := .Resize "1024x webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-                        {{ $image768 := .Resize "768x webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-                        {{ $image640 := .Resize "640x webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-                        <img src="{{ $image1024.RelPermalink }}" srcset="{{ $image640.RelPermalink }} 640w,
+                    {{ $hero := .Resources.GetMatch .Params.hero_image }}
+                    {{ with $hero }}
+                    {{ $image1024 := .Resize "1024x webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
+                    {{ $image768 := .Resize "768x webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
+                    {{ $image640 := .Resize "640x webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
+                    {{ $image300 := .Resize "300x webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
+                    <img src="{{ $image1024.RelPermalink }}" srcset="{{ $image300.RelPermalink }} 300w,
+                                         {{ $image640.RelPermalink }} 640w,
                                          {{ $image768.RelPermalink }} 768w,
-                                         {{ $image1024.RelPermalink }} 1024w" sizes="(max-width: 640px) 640px,
+                                         {{ $image1024.RelPermalink }} 1024w" sizes="(max-width: 300px) 300px,
+                                        (max-width: 640px) 640px,
                                         (max-width: 768px) 768px,
                                         1024px" alt="FígadoZen" width="{{ $image1024.Width }}"
-                            height="{{ $image1024.Height }}" loading="eager" decoding="async" class="w-full">
-                        {{ end }}
-                    </div>
+                        height="{{ $image1024.Height }}" loading="eager" decoding="async" class="w-auto h-auto">
+                    {{ end }}
                 </div>
 
                 <!-- CTA -->
                 <a href="#formsPreco"
-                    class="px-10 py-5 text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-green-gradienteDe to-green-gradientePara rounded-lg font-system hover:from-green-hover hover:to-green-hover">
-                    VER PREÇO E OFERTAS
+                    class="px-10 py-5 items-center justify-center font-bold text-white uppercase transition-colors bg-gradient-to-b from-green-gradienteDe to-green-gradientePara rounded-lg font-system hover:from-green-hover hover:to-green-hover">
+                    <span class="hidden sm:inline text-3xl">VER PREÇO E OFERTAS</span>
+                    <span class="flex inline sm:hidden text-2xl items-center justify-center text-center">VER PREÇO
+                        E<br />OFERTAS</span>
                 </a>
             </div>
         </div>
-
 
     </div>
 
@@ -79,20 +79,19 @@
 
     <div class="max-w-5xl px-4 pb-8 mx-auto">
         <div class="max-w-5xl pt-4 mx-auto mb-12 text-center">
-            <h1 class="my-4 text-2xl md:text-[40px] font-extrabold text-green-site leading-tight">
+            <h1 class="my-4 text-xl md:text-[40px] font-extrabold text-green-site leading-tight text-center">
                 VOCÊ ESTÁ <span class="text-blue-site">PROTEGIDO</span> CONTRA A GORDURA NO FÍGADO?
             </h1>
-            <p class="text-2xl md:text-lg font-normal text-slate-700">
+            <p class="text-base md:text-xl font-normal text-slate-700">
                 1 em cada 4 pessoas terá um fígado gordo, doença que pode progredir para <span
                     class="font-bold text-blue-site">3 diferentes estágios</span>.
-
             </p>
         </div>
 
         <!-- Grid de Proteção Fígado -->
         <div class="space-y-12 max-w-5xl mx-auto transition-all duration-500">
             <!-- Estágio 1 -->
-            <div class="flex flex-col md:flex-row items-center gap-32 transition-all duration-500">
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-32 transition-all duration-500">
                 {{ $hero := .Resources.GetMatch .Params.img_protegido_1 }}
                 {{ with $hero }}
                 {{ $image300 := .Resize "300x225 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
@@ -103,17 +102,15 @@
                     <h3 class="text-xl font-bold text-gray-800 mb-2 font-open-sans transition-all duration-500">
                         Estágio 1: Acúmulo de gordura nas células do fígado
                     </h3>
-                    <p class="text-lg mt-6 font-sans transition-all duration-500">
-                        A dieta moderna faz uso intensivo de açúcares e
-                        carboidratos, que são convertidos em gordura pelo corpo.
-                        Isso pode resultar no acúmulo de gordura nas células do
-                        fígado.
+                    <p class="text-base md:text-lg mt-6 font-sans transition-all duration-500">
+                        A dieta moderna faz uso intensivo de açúcares e carboidratos, que são convertidos em gordura
+                        pelo corpo. Isso pode resultar no acúmulo de gordura nas células do fígado.
                     </p>
                 </div>
             </div>
 
             <!-- Estágio 2 -->
-            <div class="flex flex-col md:flex-row items-center gap-32 transition-all duration-500">
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-32 transition-all duration-500">
                 {{ $hero := .Resources.GetMatch .Params.img_protegido_2 }}
                 {{ with $hero }}
                 {{ $image300 := .Resize "300x225 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
@@ -121,10 +118,10 @@
                     decoding="async" class="w-80">
                 {{ end }}
                 <div class="md:w-5/6 transition-all duration-500">
-                    <h3 class="text-xl font-bold text-gray-800 mb-2 font-sans transition-all duration-500">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2 font-open-sans transition-all duration-500">
                         Estágio 2: Resposta Inflamatória
                     </h3>
-                    <p class="text-lg mt-6 font-sans transition-all duration-500">
+                    <p class="text-base md:text-lg mt-6 font-sans transition-all duration-500">
                         Esse acúmulo de gordura nas células do fígado causa uma
                         resposta inflamatória auto – imune , na qual anticorpos
                         são enviados para atacar o próprio órgão.
@@ -133,7 +130,7 @@
             </div>
 
             <!-- Estágio 3 -->
-            <div class="flex flex-col md:flex-row items-center gap-32 transition-all duration-500">
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-32 transition-all duration-500">
                 {{ $hero := .Resources.GetMatch .Params.img_protegido_3 }}
                 {{ with $hero }}
                 {{ $image300 := .Resize "300x225 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
@@ -141,10 +138,10 @@
                     decoding="async" class="w-80">
                 {{ end }}
                 <div class="md:w-3/4 transition-all duration-500">
-                    <h3 class="text-xl font-bold text-gray-800 mb-2 transition-all duration-500">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2 font-open-sans transition-all duration-500">
                         Estágio 3: Função Hepática Reduzida
                     </h3>
-                    <p class="text-lg mt-6 transition-all duration-500">
+                    <p class="text-base md:text-lg mt-6 font-sans transition-all duration-500">
                         A inflamação reduz a capacidade do fígado de funcionar
                         adequadamente , impactando negativamente sua capacidade
                         de desintoxicar o corpo e processar impurezas, causando
@@ -155,10 +152,10 @@
         </div>
 
         <div class="max-w-5xl pt-4 mx-auto mt-16 mb-1 text-center">
-            <h1 class="my-4 text-2xl md:text-[40px] font-extrabold text-green-site leading-tight">
+            <h1 class="my-4 text-xl md:text-[40px] font-extrabold text-green-site leading-tight">
                 QUAIS SÃO AS <span class="text-blue-site">CONSEQUÊNCIAS</span> DA INFLAMAÇÃO
             </h1>
-            <p class="text-2xl md:text-lg font-normal text-slate-700">
+            <p class="text-lg md:text-lg font-normal text-slate-700">
                 Se <span class="font-bold text-blue-site">nada for feito</span>, um fígado gordo pode levar à cirrose
                 hepática, condição grave e que requer grandes mudanças no estilo de vida.
             </p>
@@ -174,7 +171,7 @@
                 {{ end }}
             </div>
 
-            <div class="space-y-1 text-base md:text-lg font-normal text-left md:w-full">
+            <div class="space-y-1 text-base md:text-lg font-normal text-left md:w-full hidden sm:block">
                 <p class="text-gray-600">
                     O acúmulo de gordura no fígado pode levar à cirrose,
                     isto
@@ -209,13 +206,16 @@
         </svg>
     </div>
 
-    <div class="max-w-full px-4 pb-8 mx-auto bg-blue-site">
-        <div class="w-[867px] h-[200px] mx-auto">
+    <div class="max-w-full mx-auto bg-blue-site">
+        <div class="w-full max-w-[867px] h-auto mx-auto flex items-center justify-center">
             {{ $hero := .Resources.GetMatch .Params.correios }}
             {{ with $hero }}
             {{ $image867 := .Resize "867x200 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-            <img src="{{ $image867.RelPermalink }}" alt="FígadoZen" width="867" height="200" loading="eager"
-                decoding="async" class="w-full h-full">
+            {{ $image480 := .Resize "480x200 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
+            <img src="{{ $image867.RelPermalink }}" srcset="{{ $image480.RelPermalink }} 480w,
+                     {{ $image867.RelPermalink }} 867w" sizes="(max-width: 480px) 480px,
+                    867px" alt="FígadoZen" width="867" height="200" loading="eager" decoding="async"
+                class="w-full h-full">
             {{ end }}
         </div>
     </div>
@@ -234,7 +234,7 @@
     <div class="max-w-5xl px-4 pb-8 mx-auto">
         <!-- Depoimentos -->
         <div>
-            <h2 class="container mx-auto px-4 md:px-0 text-center text-3xl md:text-4xl font-bold text-green-site mb-12">
+            <h2 class="container mx-auto px-4 md:px-0 text-center text-2xl md:text-4xl font-bold text-green-site mb-12">
                 DEPOIMENTO <span class="text-blue-site">REAL</span> DE PESSOAS <span class="text-blue-site">REAIS</span>
             </h2>
 
@@ -287,13 +287,12 @@
 
     <div class="max-w-5xl px-4 pb-8 mx-auto">
         <div class="max-w-5xl pt-4 mx-auto mb-12 text-center">
-            <h1 class="my-4 text-2xl md:text-[40px] font-extrabold text-green-site leading-tight">
+            <h1 class="my-4 text-xl md:text-[40px] font-extrabold text-green-site leading-tight">
                 A CAUSA BIOLOGICA DE UM FÍGADO GORDO
             </h1>
-            <p class="text-2xl md:text-lg font-normal text-slate-700">
+            <p class="text-lg md:text-lg font-normal text-slate-700">
                 Os pesquisadores identificaram a "mãe de todos os antioxidantes", que <span
                     class="font-bold text-blue-site">protege o fígado contra a inflamação</span>.
-
             </p>
         </div>
 
@@ -307,7 +306,7 @@
                 {{ end }}
             </div>
 
-            <div class="text-base md:text-base font-normal text-left md:w-full">
+            <div class="text-base md:text-base font-normal text-left md:w-full hidden sm:block">
                 <p class="text-gray-600">
                     O fígado é responsável por uma infinidade de funções, sendo que a mais importante delas é a
                     decomposição de toxinas que
@@ -325,8 +324,10 @@
 
         <div class="flex flex-col items-center justify-center gap-8 mt-14">
             <a href="#formsPreco"
-                class="px-10 py-5 text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-green-gradienteDe to-green-gradientePara rounded-lg font-system hover:from-green-hover hover:to-green-hover">
-                VER PREÇO E OFERTAS
+                class="px-10 py-5 lg:text-2xl sd:text-2xl md:text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-green-gradienteDe to-green-gradientePara rounded-lg font-system hover:from-green-hover hover:to-green-hover">
+                <span class="hidden sm:inline text-3xl">VER PREÇO E OFERTAS</span>
+                <span class="flex inline sm:hidden text-2xl items-center justify-center text-center">VER PREÇO
+                    E<br />OFERTAS</span>
             </a>
         </div>
         <!-- CTA -->
@@ -358,10 +359,10 @@
 
     <div class="max-w-5xl px-4 pb-8 mx-auto">
         <div class="max-w-5xl pt-4 mx-auto mb-8 text-center">
-            <h1 class="my-4 text-2xl md:text-[40px] font-extrabold text-green-site leading-tight">
+            <h1 class="my-4 text-xl md:text-[40px] font-extrabold text-green-site leading-tight">
                 CONHEÇA O <span class="text-blue-site">FÍGADO</span>ZEN
             </h1>
-            <p class="text-2xl md:text-lg font-normal text-slate-700">
+            <p class="text-lg md:text-lg font-normal text-slate-700">
                 <span class="text-blue-site font-bold">FÍGADO</span><span class="text-green-site font-bold">ZEN</span> é
                 uma associação de
                 ervas medicinais que trazem diversos benefícios a saúde
@@ -369,7 +370,7 @@
         </div>
     </div>
 
-    <div class="grid max-w-5xl grid-cols-1 gap-4 mx-auto md:grid-cols-2 mt-8">
+    <div class="grid max-w-5xl grid-cols-1 gap-4 mx-auto md:grid-cols-2 mt-0 md:mt-8">
         <div class="flex items-center justify-center">
             {{ $hero := .Resources.GetMatch .Params.natural_100 }}
             {{ with $hero }}
@@ -380,28 +381,29 @@
         </div>
 
         <div class="text-base md:text-lg font-normal text-left md:w-full">
-            <p class="text-gray-600">
+            <p class="text-gray-600 p-4 sm:p-0">
                 <span class="font-bold">O <span class="text-blue-site">FÍGADO</span><span
-                        class="text-green-site">ZEN</span> PARA
+                        class="text-green-site">ZEN</span>
+                    PARA
                     LIMPEZA DO FÍGADO</span>
                 garante ao seu fígado o cuidado e atenção necessários para se recuperar,
                 além de melhorar drasticamente sua saúde e bem-estar.
             </p>
-            <p class="text-gray-600 mt-3">
+            <p class="text-gray-600 mt-3 p-4 sm:p-0">
                 Maneiras testadas, comprovadas e totalmente naturais de
                 <span class="font-bold">PREVENIR & REVERTER</span> os 2 tipos principais
                 da Doença hepática gordurosa que são:
             </p>
-            <ul class="list-disc text-gray-600 ml-12 my-3">
+            <ul class="list-disc text-gray-600 ml-12 my-3 p-4 sm:p-0">
                 <li>Doença hepática gordurosa alcoólica (DHGA),</li>
                 <li>Doença hepática gordurosa não alcoólica (DHGNA).</li>
             </ul>
-            <p class="text-gray-600 mt-3">
+            <p class="text-gray-600 mt-3 p-4 sm:p-0">
                 <span class="font-bold">GRAUS DE GORDURA NO FÍGADO QUE O
                     <span class="text-blue-site">FÍGADO</span><span class="text-green-site">ZEN</span> IRÁ
                     TRATAR:</span>
             </p>
-            <ul class="list-disc text-gray-600 ml-12 my-3">
+            <ul class="list-disc text-gray-600 ml-12 my-3 p-4 sm:p-0">
                 <li>
                     <span class="font-bold">Grau 1</span>, em que há um leve acúmulo de
                     gordura no fígado, o que, de forma geral, corresponde ao acometimento de
@@ -418,10 +420,10 @@
 
     <div class="max-w-5xl px-4 pb-8 mt-10 mx-auto">
         <div class="max-w-5xl pt-4 mx-auto mb-8 text-center">
-            <h1 class="my-4 text-2xl md:text-[40px] font-extrabold text-green-site leading-tight">
+            <h1 class="my-4 text-xl md:text-[40px] font-extrabold text-green-site leading-tight">
                 CONHEÇA NOSSAS INSTALAÇÕES
             </h1>
-            <p class="text-2xl md:text-lg font-normal text-slate-700">
+            <p class="text-lg md:text-lg font-normal text-slate-700">
                 <span class="text-blue-site font-bold">FÍGADO</span><span class="text-green-site font-bold">ZEN</span> é
                 produzido com todo cuidado e carinho!
             </p>
@@ -453,7 +455,7 @@
 
     <div class="max-w-5xl px-4 pb-8 mt-10 mx-auto">
         <div class="max-w-5xl pt-4 mx-auto mb-8 text-center mt-5">
-            <h1 class="my-4 text-2xl md:text-[40px] font-extrabold text-green-site leading-tight">
+            <h1 class="my-4 text-xl md:text-[40px] font-extrabold text-green-site leading-tight">
                 OS PRINCIPAIS INGREDIENTES DO <span class="text-blue-site font-bold">FÍGADO</span>ZEN
             </h1>
         </div>
@@ -568,8 +570,10 @@
 
     <div class="flex flex-col items-center justify-center gap-8 mt-14">
         <a href="#formsPreco"
-            class="px-10 py-5 text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-green-gradienteDe to-green-gradientePara rounded-lg font-system hover:from-green-hover hover:to-green-hover">
-            VER PREÇO E OFERTAS
+            class="px-10 py-5 lg:text-2xl sd:text-2xl md:text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-green-gradienteDe to-green-gradientePara rounded-lg font-system hover:from-green-hover hover:to-green-hover">
+            <span class="hidden sm:inline text-3xl">VER PREÇO E OFERTAS</span>
+            <span class="flex inline sm:hidden text-2xl items-center justify-center text-center">VER PREÇO
+                E<br />OFERTAS</span>
         </a>
     </div>
 
@@ -595,8 +599,9 @@
                 </g>
             </svg>
         </div>
-        <div class="max-w-5xl mx-auto mb-8 text-center mt-5">
-            <h1 class="my-4 text-2xl md:text-2xl font-extrabold text-white leading-tight">
+
+        <div class="max-w-5xl mx-auto mb-8 text-center mt-5 px-2 sm:px-4">
+            <h1 class="my-4 text-xl sm:text-3xl font-extrabold text-white leading-tight">
                 RESTAURE A SAÚDE DO SEU FÍGADO COM APENAS <span class="underline">20 GOTAS POR DIA</span>
             </h1>
         </div>
@@ -611,8 +616,10 @@
 
         <div class="flex flex-col items-center justify-center gap-8 mt-14">
             <a href="#formsPreco"
-                class="px-10 py-5 text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-blue-gradienteDe to-blue-gradientePara rounded-lg font-system hover:from-blue-hover hover:to-blue-hover">
-                VER PREÇO E OFERTAS
+                class="px-10 py-5 lg:text-2xl sd:text-2xl md:text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-blue-gradienteDe to-blue-gradientePara rounded-lg font-system hover:from-blue-hover hover:to-blue-hover">
+                <span class="hidden sm:inline text-3xl">VER PREÇO E OFERTAS</span>
+                <span class="flex inline sm:hidden text-2xl items-center justify-center text-center">VER PREÇO
+                    E<br />OFERTAS</span>
             </a>
         </div>
     </div>
@@ -620,10 +627,10 @@
 
 <div class="relative max-w-full px-4 pb-8 mt-0 bg-blue-site" id="formsPreco">
     <div class="max-w-5xl pt-4 mx-auto mb-8 text-center bg-blue-site">
-        <h1 class="my-4 text-2xl md:text-[40px] font-extrabold text-white leading-tight">
+        <h1 class="my-4 text-xl md:text-[40px] font-extrabold text-white leading-tight">
             CORRA!<br />ESSA OFERTA É POR TEMPO LIMITADO!
         </h1>
-        <p class="text-2xl md:text-lg font-normal text-white">
+        <p class="text-lg md:text-lg font-normal text-white">
             Economize até 75% fazendo seu pedido hoje! <br />
             <span class="italic">Preencha os dados para ver os preços</span>
         </p>
@@ -675,7 +682,7 @@
     </div>
     <div class="flex flex-col items-center justify-center gap-8 mt-14">
         <a href="#formsPreco"
-            class="px-10 mb-10 py-5 text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-blue-gradienteDe to-blue-gradientePara rounded-lg font-system hover:from-blue-hover hover:to-blue-hover">
+            class="px-10 mb-10 py-5 lg:text-2xl sd:text-2xl md:text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-blue-gradienteDe to-blue-gradientePara rounded-lg font-system hover:from-blue-hover hover:to-blue-hover">
             VER PREÇO E OFERTAS
         </a>
     </div>
@@ -718,7 +725,7 @@
     {{ end }}
 </div>
 
-<div class="grid grid-cols-2 gap-4 max-w-5xl mx-auto mt-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto mt-8">
     {{ range .Params.escrita }}
     <div class="p-4 border border-gray-300 rounded-lg">
         <img src="/{{ .img_id }}" alt="{{ .alt_text }}">
@@ -758,7 +765,7 @@
         <img src="/images/garantia30.png.webp" alt="30 dias garantia" width="300" height="300">
     </div>
     <div>
-        <p class="text-2xl font-extrabold text-center text-blue-site md:text-4xl">
+        <p class="text-xl font-extrabold text-center text-blue-site md:text-4xl">
             Se por algum motivo você<br>
             não ficar satisfeito com<br>
             FígadoZen, devolvemos 100%<br>
@@ -769,7 +776,7 @@
 </div>
 <div class="flex flex-col items-center justify-center mb-10">
     <a href="#formsPreco"
-        class="px-10 py-5 text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-green-gradienteDe to-green-gradientePara rounded-lg font-system hover:from-green-hover hover:to-green-hover">
+        class="px-10 py-5 lg:text-2xl sd:text-2xl md:text-3xl font-bold text-white uppercase transition-colors bg-gradient-to-b from-green-gradienteDe to-green-gradientePara rounded-lg font-system hover:from-green-hover hover:to-green-hover">
         VER PREÇO E OFERTAS
     </a>
 </div>
