@@ -61,3 +61,8 @@ disableKinds = ["section", "taxonomy", "term"]
   [performance.css]
     minify = true
     transpile = true
+
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
