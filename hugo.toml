@@ -46,7 +46,7 @@ enableRobotsTXT = true
     target = "$1"
 
 [imaging]
-  quality = 75
+  quality = 85
   resampleFilter = "Lanczos"
 
 [security]

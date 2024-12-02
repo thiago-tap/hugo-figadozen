@@ -693,8 +693,8 @@
     <div class="relative z-10 flex flex-col items-center justify-center text-center">
         {{ $saibaComo := .Resources.GetMatch .Params.saiba_como }}
         {{ with $saibaComo }}
-        {{ $image := .Resize "600x auto webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-        <img src="{{ $image.RelPermalink }}" alt="Saiba como restaurar a saúde do seu fígado" width="600" height="auto"
+        {{ $image := .Resize "600x200 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
+        <img src="{{ $image.RelPermalink }}" alt="Saiba como restaurar a saúde do seu fígado" width="600" height="200"
             class="w-9/12 h-auto mt-14">
         {{ end }}
     </div>
@@ -748,7 +748,7 @@
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto mt-8">
-    {{ range .Params.escrita }}
+    {{ range .Site.Home.Params.escrita }}
     <div class="p-4 border border-gray-300 rounded-lg">
         <img src="/{{ .img_id }}" alt="{{ .alt_text }}" decoding="async" width="500" height="300" class="w-full h-auto">
     </div>
