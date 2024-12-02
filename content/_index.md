@@ -18,6 +18,10 @@ zinco: images/zinco-300x300.webp
 retangulo: images/retangulo-desk.webp
 rastrear: images/lupa.webp
 ambiente_seguro: images/ssl-certificado.webp
+info_figadozen: images/info-figzen.webp
+garantia30: images/garantia30.png.webp
+img_form: images/img-form.webp
+saiba_como: images/saiba_como.webp
 
 escrita:
   - img_id: images/escrita1.webp

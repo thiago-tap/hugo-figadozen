@@ -33,14 +33,14 @@
                     {{ $image768 := .Resize "768x webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
                     {{ $image640 := .Resize "640x webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
                     {{ $image300 := .Resize "300x webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-                    <img src="{{ $image1024.RelPermalink }}" srcset="{{ $image300.RelPermalink }} 300w,
+                    <img src="{{ $image300.RelPermalink }}" srcset="{{ $image300.RelPermalink }} 300w,
                                          {{ $image640.RelPermalink }} 640w,
                                          {{ $image768.RelPermalink }} 768w,
                                          {{ $image1024.RelPermalink }} 1024w" sizes="(max-width: 300px) 300px,
                                         (max-width: 640px) 640px,
                                         (max-width: 768px) 768px,
                                         1024px" alt="FígadoZen - Suplemento Natural para Gordura no Fígado"
-                        width="{{ $image1024.Width }}" height="{{ $image1024.Height }}" loading="eager" decoding="async"
+                        width="{{ $image300.Width }}" height="{{ $image300.Height }}" loading="eager" decoding="async"
                         class="w-auto h-auto">
                     {{ end }}
                 </div>
@@ -213,10 +213,12 @@
             {{ with $hero }}
             {{ $image867 := .Resize "867x200 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
             {{ $image480 := .Resize "480x200 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-            <img src="{{ $image867.RelPermalink }}" srcset="{{ $image480.RelPermalink }} 480w,
-                     {{ $image867.RelPermalink }} 867w" sizes="(max-width: 480px) 480px,
-                    867px" alt="FígadoZen" width="867" height="200" loading="eager" decoding="async"
-                class="w-full h-full">
+            {{ $image320 := .Resize "320x200 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
+            <img src="{{ $image320.RelPermalink }}" srcset="{{ $image320.RelPermalink }} 320w,
+                 {{ $image480.RelPermalink }} 480w,
+                 {{ $image867.RelPermalink }} 867w" sizes="(max-width: 320px) 320px,
+                (max-width: 480px) 480px,
+                867px" alt="FígadoZen" width="867" height="200" loading="eager" decoding="async" class="w-full h-full">
             {{ end }}
         </div>
     </div>
@@ -248,7 +250,7 @@
                 <div class="relative w-full overflow-hidden shadow-lg bg-neutral-900 youtube-video-container"
                     style="aspect-ratio: 16/9;" data-video-id="{{ $video.id }}" data-video-title="{{ $video.title }}">
                     <img src="{{ $processedThumb.RelPermalink }}" alt="{{ $video.title }}" width="640" height="360"
-                        loading="lazy" decoding="async" class="absolute top-0 left-0 object-cover w-full h-full">
+                        decoding="async" class="absolute top-0 left-0 object-cover w-full h-full">
                     <button
                         class="absolute inset-0 flex items-center justify-center w-full h-full transition-opacity bg-black bg-opacity-50 hover:bg-opacity-40">
                         <svg class="w-20 h-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158 110">
@@ -439,7 +441,7 @@
         <div class="relative w-full overflow-hidden shadow-lg bg-neutral-900 youtube-video-container"
             style="aspect-ratio: 16/9;" data-video-id="{{ $video.id }}" data-video-title="{{ $video.title }}">
             <img src="{{ $processedThumb.RelPermalink }}" alt="{{ $video.title }}" width="640" height="360"
-                loading="lazy" decoding="async" class="absolute top-0 left-0 object-cover w-full h-full">
+                decoding="async" class="absolute top-0 left-0 object-cover w-full h-full">
             <button
                 class="absolute inset-0 flex items-center justify-center w-full h-full transition-opacity bg-black bg-opacity-50 hover:bg-opacity-40">
                 <svg class="w-20 h-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158 110">
@@ -611,9 +613,12 @@
         <div class="flex justify-items-center"></div>
         {{ $hero := .Resources.GetMatch .Params.retangulo }}
         {{ with $hero }}
-        {{ $image1046 := .Resize "1046x368 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
-        <img src="{{ $image1046.RelPermalink }}" alt="FígadoZen" width="1046" height="368" loading="eager"
-            decoding="async" class="w-4/5 justify-self-center">
+        {{ $image480 := .Resize "480x169 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
+        {{ $image320 := .Resize "320x113 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
+        <img src="{{ $image320.RelPermalink }}" srcset="{{ $image320.RelPermalink }} 320w,
+             {{ $image480.RelPermalink }} 480w" sizes="(max-width: 320px) 320px,
+            480px" alt="FígadoZen" width="480" height="169" loading="eager" decoding="async"
+            class="w-4/5 justify-self-center">
         {{ end }}
 
         <div class="flex flex-col items-center justify-center gap-8 mt-14">
@@ -666,8 +671,12 @@
                 <span>🔒</span> Pedidos Rápidos e Seguros
             </div>
         </form>
-        <img src="/images/img-form.webp" alt="Oferta Limitada"
+        {{ $imgForm := .Resources.GetMatch .Params.img_form }}
+        {{ with $imgForm }}
+        {{ $image := .Resize "315x webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
+        <img src="{{ $image.RelPermalink }}" alt="Oferta Limitada"
             class="absolute top-0 right-[-315px] w-9/12 h-auto hidden md:block">
+        {{ end }}
     </div>
 </div>
 
@@ -682,7 +691,12 @@
     </div>
     <!-- Conteúdo principal -->
     <div class="relative z-10 flex flex-col items-center justify-center text-center">
-        <img src="/images/saiba_como.webp" alt="Saiba como restaurar a saúde do seu fígado" class="w-9/12 h-auto mt-14">
+        {{ $saibaComo := .Resources.GetMatch .Params.saiba_como }}
+        {{ with $saibaComo }}
+        {{ $image := .Resize "600x auto webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
+        <img src="{{ $image.RelPermalink }}" alt="Saiba como restaurar a saúde do seu fígado" width="600" height="auto"
+            class="w-9/12 h-auto mt-14">
+        {{ end }}
     </div>
     <div class="flex flex-col items-center justify-center gap-8 mt-14">
         <a href="#formsPreco"
@@ -718,8 +732,8 @@
     {{ $processedThumb := .Resize "640x360 webp q80" }}
     <div class="relative w-full overflow-hidden shadow-lg bg-neutral-900 youtube-video-container"
         style="aspect-ratio: 16/9;" data-video-id="{{ $video.id }}" data-video-title="{{ $video.title }}">
-        <img src="{{ $processedThumb.RelPermalink }}" alt="{{ $video.title }}" width="640" height="360" loading="lazy"
-            decoding="async" class="absolute top-0 left-0 object-cover w-full h-full">
+        <img src="{{ $processedThumb.RelPermalink }}" alt="{{ $video.title }}" width="640" height="360" decoding="async"
+            class="absolute top-0 left-0 object-cover w-full h-full">
         <button
             class="absolute inset-0 flex items-center justify-center w-full h-full transition-opacity bg-black bg-opacity-50 hover:bg-opacity-40">
             <svg class="w-20 h-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158 110">
@@ -736,8 +750,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto mt-8">
     {{ range .Params.escrita }}
     <div class="p-4 border border-gray-300 rounded-lg">
-        <img src="/{{ .img_id }}" alt="{{ .alt_text }}" loading="lazy" decoding="async" width="500" height="300"
-            class="w-full h-auto">
+        <img src="/{{ .img_id }}" alt="{{ .alt_text }}" decoding="async" width="500" height="300" class="w-full h-auto">
     </div>
     {{ end }}
 </div>
@@ -765,13 +778,27 @@
 </div>
 
 <div class="mt-5 mb-16 justify-items-center">
-    <img src="/images/info-figzen.webp" alt="30 dias garantia" width="1040" height="344">
+    {{ $infoFigadozen := .Resources.GetMatch .Params.info_figadozen }}
+    {{ with $infoFigadozen }}
+    {{ $image1040 := .Resize "1040x344 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
+    {{ $image768 := .Resize "768x344 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
+    {{ $image480 := .Resize "480x344 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
+    <img src="{{ $image480.RelPermalink }}" srcset="{{ $image480.RelPermalink }} 480w,
+                 {{ $image768.RelPermalink }} 768w,
+                 {{ $image1040.RelPermalink }} 1040w" sizes="(max-width: 480px) 480px,
+                (max-width: 768px) 768px,
+                1040px" alt="30 dias garantia" width="1040" height="344">
+    {{ end }}
 </div>
 
 <!-- Garantia -->
 <div class="flex flex-col items-center justify-center gap-8 p-4 my-4 md:p-0 md:my-4 md:flex-row md:gap-16">
     <div>
-        <img src="/images/garantia30.png.webp" alt="30 dias garantia" width="300" height="300">
+        {{ $garantia := .Resources.GetMatch .Params.garantia30 }}
+        {{ with $garantia }}
+        {{ $image300 := .Resize "300x300 webp q80 Lanczos" | images.Filter (images.Contrast 29) }}
+        <img src="{{ $image300.RelPermalink }}" alt="30 dias garantia" width="300" height="300">
+        {{ end }}
     </div>
     <div>
         <p class="text-xl font-extrabold text-center text-blue-site md:text-4xl">
