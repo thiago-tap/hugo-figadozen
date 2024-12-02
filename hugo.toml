@@ -70,3 +70,6 @@ enableRobotsTXT = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON", "RobotsTXT"]
+
+[asset]
+  fingerprint = true
