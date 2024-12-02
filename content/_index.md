@@ -1,5 +1,5 @@
 ---
-title: FígadoZen
+title: FígadoZen - Leads Promoção
 description: Leads Promoção
 hero_image: images/capa.webp
 img_protegido_1: images/F-300x225.webp
