@@ -6,13 +6,11 @@ disableKinds = ["section", "taxonomy", "term"]
 enableRobotsTXT = true
 
 [module]
-  [module.hugoVersion]
-    extended = true
-    min      = "0.112.0"
-  [[module.mounts]]
+  path = "github.com/bep/hugo-minify"
+  [[mounts]]
     source = "assets"
     target = "assets"
-  [[module.mounts]]
+  [[mounts]]
     source = "hugo_stats.json"
     target = "assets/watching/hugo_stats.json"
 
@@ -73,3 +71,7 @@ enableRobotsTXT = true
 
 [asset]
   fingerprint = true
+
+[[pipeline]]
+  name = "minify"
+  args = ["hugo", "minify"]
