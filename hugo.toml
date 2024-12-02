@@ -3,6 +3,7 @@ relativeURLs = true
 canonifyURLs = true
 
 disableKinds = ["section", "taxonomy", "term"]
+enableRobotsTXT = true
 
 [module]
   [module.hugoVersion]
