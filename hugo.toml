@@ -7,7 +7,8 @@ environment = "production" # Define o ambiente como produção
 [build]
   useHugoExtended = true # Garante o uso do Hugo Extended
 
-disableKinds = ["section", "taxonomy", "term"]
+# disableKinds = ["section", "taxonomy", "term"]
+disableKinds = ["page", "home", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"]
 enableRobotsTXT = true
 
 [module]
