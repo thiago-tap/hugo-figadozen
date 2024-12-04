@@ -1,4 +1,4 @@
-baseURL = "$CF_PAGES_URL" # Substitui pela variável de ambiente no Cloudflare Pages
+baseURL = "https://figadozen.catiteo.com/"
 relativeURLs = true
 canonifyURLs = true
 
@@ -6,15 +6,33 @@ environment = "production" # Define o ambiente como produção
 
 [build]
   useHugoExtended = true # Garante o uso do Hugo Extended
+  writeStats = true
+  useResourceCacheWhen = "always"
+
+  [[build.cachebusters]]
+    source = "assets/watching/hugo_stats\\.json"
+    target = "styles\\.css"
+
+  [[build.cachebusters]]
+    source = "(postcss|tailwind)\\.config\\.js"
+    target = "css"
+
+  [[build.cachebusters]]
+    source = "assets/.*\\.(js|ts|jsx|tsx)"
+    target = "js"
+
+  [[build.cachebusters]]
+    source = "assets/.*\\.(.*)$"
+    target = "$1"
 
 disableKinds = ["section", "taxonomy", "term"]
-# disableKinds = ["page", "home", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"]
 enableRobotsTXT = true
 
 [module]
   [[mounts]]
     source = "assets"
     target = "assets"
+  
   [[mounts]]
     source = "hugo_stats.json"
     target = "assets/watching/hugo_stats.json"
@@ -31,22 +49,6 @@ enableRobotsTXT = true
       keepCSS2 = true
     [minify.tdewolff.js]
       keepVarNames = false
-
-[build]
-  writeStats = true
-  useResourceCacheWhen = "always"
-  [[build.cachebusters]]
-    source = "assets/watching/hugo_stats\\.json"
-    target = "styles\\.css"
-  [[build.cachebusters]]
-    source = "(postcss|tailwind)\\.config\\.js"
-    target = "css"
-  [[build.cachebusters]]
-    source = "assets/.*\\.(js|ts|jsx|tsx)"
-    target = "js"
-  [[build.cachebusters]]
-    source = "assets/.*\\.(.*)$"
-    target = "$1"
 
 [imaging]
   quality = 85
