@@ -2,10 +2,10 @@ baseURL = "https://figadozen.catiteo.com/"
 relativeURLs = true
 canonifyURLs = true
 
-environment = "production" # Define o ambiente como produção
+environment = "production"
 
 [build]
-  useHugoExtended = true # Garante o uso do Hugo Extended
+  useHugoExtended = true
   writeStats = true
   useResourceCacheWhen = "always"
 
