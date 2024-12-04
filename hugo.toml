@@ -2,6 +2,11 @@ baseURL = "$CF_PAGES_URL" # Substitui pela variável de ambiente no Cloudflare P
 relativeURLs = true
 canonifyURLs = true
 
+environment = "production" # Define o ambiente como produção
+
+[build]
+  useHugoExtended = true # Garante o uso do Hugo Extended
+
 disableKinds = ["section", "taxonomy", "term"]
 enableRobotsTXT = true
 
@@ -78,6 +83,6 @@ enableRobotsTXT = true
 [asset]
   fingerprint = true
 
-[pipeline]
+[[pipeline]]
   name = "minify"
   args = ["hugo", "minify"]
