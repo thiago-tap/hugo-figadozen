@@ -73,15 +73,8 @@ enableRobotsTXT = true
   filename = "sitemap.xml"
   priority = 0.5
 
-[outputFormats]
-  [outputFormats.RobotsTXT]
-    baseName = "robots"
-    mediaType = "text/plain"
-    isPlainText = true
-    notAlternative = true
-
 [outputs]
-  home = ["HTML", "RSS", "JSON", "RobotsTXT"]
+  home = ["HTML", "RSS", "JSON"]
 
 [asset]
   fingerprint = true
