@@ -1,4 +1,4 @@
-baseURL = "https://figadozen.catiteo.com/"
+baseURL = "$CF_PAGES_URL" # Substitui pela variável de ambiente no Cloudflare Pages
 relativeURLs = true
 canonifyURLs = true
 
@@ -6,7 +6,6 @@ disableKinds = ["section", "taxonomy", "term"]
 enableRobotsTXT = true
 
 [module]
-  path = "github.com/bep/hugo-minify"
   [[mounts]]
     source = "assets"
     target = "assets"
@@ -79,6 +78,6 @@ enableRobotsTXT = true
 [asset]
   fingerprint = true
 
-[[pipeline]]
+[pipeline]
   name = "minify"
   args = ["hugo", "minify"]
