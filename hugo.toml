@@ -73,12 +73,8 @@ disableKinds = ["section", "taxonomy", "term"]
   filename = "sitemap.xml"
   priority = 0.5
 
-[mediaTypes]
-  [mediaTypes."image/webp"]
-  suffixes = ["webp"]
-
 [outputs]
-  home = ["HTML", "RSS", "WebP"]
+  home = ["HTML", "RSS"]
 
 [asset]
   fingerprint = true
