@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<html lang="{{ .Site.Language.LanguageCode }}" dir="{{ or .Site.Language.LanguageDirection `ltr` }}">
+
 <head>
   {{ partial "head.html" . }}
+  <title>{{ .Site.Title }}</title>
 </head>
+
 <body>
   <header>
     {{ partial "header.html" . }}
@@ -14,4 +17,5 @@
     {{ partial "footer.html" . }}
   </footer>
 </body>
+
 </html>

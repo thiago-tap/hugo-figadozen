@@ -4,6 +4,9 @@ canonifyURLs = true
 
 environment = "production"
 
+enableRobotsTXT = true
+disableKinds = ["section", "taxonomy", "term"]
+
 [build]
   useHugoExtended = true
   writeStats = true
@@ -25,15 +28,12 @@ environment = "production"
     source = "assets/.*\\.(.*)$"
     target = "$1"
 
-disableKinds = ["section", "taxonomy", "term"]
-enableRobotsTXT = true
-
 [module]
-  [[mounts]]
+  [[module.mounts]]
     source = "assets"
     target = "assets"
   
-  [[mounts]]
+  [[module.mounts]]
     source = "hugo_stats.json"
     target = "assets/watching/hugo_stats.json"
 
@@ -74,7 +74,7 @@ enableRobotsTXT = true
   priority = 0.5
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS"]
 
 [asset]
   fingerprint = true
@@ -82,3 +82,14 @@ enableRobotsTXT = true
 [[pipeline]]
   name = "minify"
   args = ["hugo", "minify"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+    style = "monokai"
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3

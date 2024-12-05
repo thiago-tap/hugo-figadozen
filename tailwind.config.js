@@ -1,15 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./layouts/**/*.html",
-    "./content/**/*.{html,md}",
-    "./assets/**/*.js", // Certifique-se de incluir scripts caso use Tailwind em JS
+    "./layouts/**/*.html", // Arquivos HTML dentro da pasta layouts
+    "./content/**/*.{html,md}", // Arquivos HTML e MD dentro da pasta content
+    "./assets/**/*.js", // Arquivos JS dentro da pasta assets (caso tenha)
+    "./static/**/*.{html,js}", // Garantindo que o conteúdo em static também seja analisado (se necessário)
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Montserrat", "sans-serif"],
-        system: ["system-ui", "sans-serif"],
+        sans: ["Montserrat", "sans-serif"], // Família de fontes para o projeto
+        system: ["system-ui", "sans-serif"], // Fontes de sistema
       },
       colors: {
         green: {
@@ -35,5 +36,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/forms"), // Para estilização de formulários
+    require("@tailwindcss/typography"), // Para estilização de tipografia
+  ],
 };

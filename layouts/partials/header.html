@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <meta charset="utf-8" />
 <meta name="description"
     content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
@@ -24,15 +23,6 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap">
 </noscript>
 
-{{/* Styles */}}
-{{ $styles := resources.Get "css/styles.css" }}
-{{ if $styles }}
-{{ $options := dict "inlineImports" true }}
-{{ $styles = $styles | css.PostCSS $options }}
-{{ if hugo.IsProduction }}
-{{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
-{{ end }}
-<link rel="stylesheet" href="{{ $styles.RelPermalink }}">
-{{ else }}
-<link rel="stylesheet" href="/css/styles.css"> <!-- Fallback se o arquivo não for encontrado -->
-{{ end }}
+<link rel="stylesheet" href="/css/styles.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="css/tailwind.css">
